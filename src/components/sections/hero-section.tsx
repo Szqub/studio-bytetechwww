@@ -25,7 +25,7 @@ export function HeroSection() {
         </AnimatedSection>
         <AnimatedSection animationType="fadeInUp" delay={200}>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10">
-            ByteTech to niezależna firma inżynierska zajmująca się projektowaniem,
+            ByteTech to niezależna firma inżynierska zajmującą się projektowaniem,
             konfiguracją i zabezpieczaniem nowoczesnych sieci informatycznych.
           </p>
         </AnimatedSection>
@@ -58,10 +58,12 @@ export function HeroSection() {
               {`
                 .line-path {
                   stroke-dasharray: 1000;
-                  stroke-dashoffset: 1000;
-                  animation: drawLine 5s ease-out forwards;
+                  animation: drawLine 7s linear infinite;
                 }
                 @keyframes drawLine {
+                  from {
+                    stroke-dashoffset: 1000;
+                  }
                   to {
                     stroke-dashoffset: 0;
                   }
@@ -71,7 +73,7 @@ export function HeroSection() {
           </defs>
           <path fill="none" stroke="url(#lineGradient)" strokeWidth="2" className="line-path" style={{animationDelay: '0.5s'}}
             d="M0,192L48,170.7C96,149,192,107,288,112C384,117,480,171,576,192C672,213,768,203,864,181.3C960,160,1056,128,1152,117.3C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-           <path fill="none" stroke="url(#lineGradient)" strokeWidth="1" opacity="0.5" className="line-path" style={{animationDelay: '0.8s'}}
+           <path fill="none" stroke="url(#lineGradient)" strokeWidth="1" opacity="0.5" className="line-path" style={{animationDelay: '1.2s'}}
             d="M0,224L60,229.3C120,235,240,245,360,234.7C480,224,600,192,720,181.3C840,171,960,181,1080,197.3C1200,213,1320,235,1380,245.3L1440,256L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
         </svg>
       </div>
