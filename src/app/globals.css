@@ -1,81 +1,52 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
+    --background: 217 76% 11%; /* #0a1a2f Deep Navy Blue */
+    --foreground: 210 30% 95%; /* Light gray/off-white for text, e.g., #eef2f9 */
+
+    --card: 217 70% 15%;       /* Slightly Lighter Navy, e.g., #112340 */
+    --card-foreground: 210 30% 95%;
+
+    --popover: 217 70% 10%;    /* Darker popover background, e.g., #081425 */
+    --popover-foreground: 210 30% 95%;
+
+    --primary: 30 100% 50%;     /* Orange #ff7f00 */
+    --primary-foreground: 210 100% 10%; /* Dark blue for text on orange, ensuring contrast */
+
+    --secondary: 187 100% 42%;  /* Neon Blue #00bcd4 */
+    --secondary-foreground: 217 76% 11%; /* Deep Navy Blue for text on neon blue */
+
+    --muted: 217 50% 25%;       /* Muted Navy, e.g., #20304f */
+    --muted-foreground: 210 25% 70%; /* Light muted text, e.g., #a0aac4 */
+
+    --accent: 30 100% 50%; /* Orange as the main accent for interactive elements */
+    --accent-foreground: 210 100% 10%; /* Dark blue for text on orange accent */
+
+    --destructive: 0 72% 51%; /* A bit brighter red for dark theme */
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+
+    --border: 217 50% 20%;       /* Navy border, e.g., #1a2941 */
+    --input: 217 50% 20%;       /* Navy input background */
+    --ring: 187 100% 42%;     /* Neon Blue for focus rings */
+    --radius: 0.5rem;
+
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+
+  /* Remove .dark specific overrides as the base theme is dark now */
+  /* .dark { ... } */
 }
 
 @layer base {
@@ -84,5 +55,36 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden; /* Prevent horizontal scroll from animations */
   }
+}
+
+/* Subtle animated background pattern */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-image:
+    radial-gradient(hsl(var(--secondary) / 0.05) 1px, transparent 1px),
+    radial-gradient(hsl(var(--accent) / 0.03) 1px, transparent 1px);
+  background-position: 0 0, 25px 25px;
+  background-size: 50px 50px;
+  animation: bg-pan 120s linear infinite;
+  z-index: -10;
+  opacity: 0.7;
+}
+
+@keyframes bg-pan {
+  0% { background-position: 0% 0%, 25px 25px; }
+  100% { background-position: 100% 100%, calc(100% + 25px) calc(100% + 25px); }
+}
+
+/* Section specific styling */
+.section-padding {
+  @apply py-16 md:py-24 px-6 md:px-8;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent;
 }
