@@ -8,20 +8,22 @@ type LogoProps = {
   height?: number;
 };
 
-// Original SVG was 150x40. This aspect ratio is maintained by default.
-const DEFAULT_LOGO_WIDTH = 150;
+// New logo dimensions: 1182x244 pixels. Aspect ratio: 4.844
+// Default size for general use (e.g., if used in header/footer elsewhere, keeping height around 40px)
 const DEFAULT_LOGO_HEIGHT = 40;
+const DEFAULT_LOGO_WIDTH = Math.round(DEFAULT_LOGO_HEIGHT * (1182 / 244)); // approx 194
 
 export function Logo({ className, width = DEFAULT_LOGO_WIDTH, height = DEFAULT_LOGO_HEIGHT }: LogoProps) {
   return (
     <Image
-      src="https://picsum.photos/150/40" 
+      src="/images/logo-bytetech-new.png" // IMPORTANT: User must place 9a7f79e4-ad1f-4edb-bc8a-dcbe15130ea9.png as logo-bytetech-new.png in public/images/
       alt="ByteTech Logo"
       width={width}
       height={height}
       className={cn(className)} 
       priority 
-      data-ai-hint="tech logo"
+      data-ai-hint="tech logo" // Keeping hint, though it's a specific logo
     />
   );
 }
+

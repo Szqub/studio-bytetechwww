@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Logo } from '@/components/ui/logo';
+// Logo import removed as it's no longer used in the header
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -41,11 +41,9 @@ export function Header() {
         isScrolled ? 'bg-background/80 backdrop-blur-md shadow-lg' : 'bg-transparent',
       )}
     >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between h-20">
-        <Link href="/" aria-label="ByteTech Strona Główna">
-          <Logo className="text-foreground hover:opacity-80 transition-opacity" />
-        </Link>
-
+      <div className="container mx-auto px-4 md:px-6 flex items-center justify-end h-20"> {/* Changed to justify-end */}
+        {/* Logo removed from header. It's now prominently in HeroSection. */}
+        
         <nav className="hidden md:flex space-x-6 items-center">
           {navItems.map((item) => (
             <Link
@@ -62,7 +60,7 @@ export function Header() {
            </Button>
         </nav>
 
-        <div className="md:hidden">
+        <div className="md:hidden"> {/* This will be pushed to the far right by justify-end on parent */}
           <Button variant="ghost" size="icon" onClick={toggleMobileMenu} aria-label="Otwórz menu">
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
@@ -92,3 +90,4 @@ export function Header() {
     </header>
   );
 }
+
