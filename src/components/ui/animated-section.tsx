@@ -20,7 +20,7 @@ export function AnimatedSection({
   delay = 0,
   animationType = 'fadeInUp',
   threshold = 0.1,
-  once = true,
+  once = false, // Default changed to false to allow animations to loop
 }: AnimatedSectionProps) {
   const [isIntersecting, setIsIntersecting] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -32,7 +32,7 @@ export function AnimatedSection({
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsIntersecting(true);
-            if (once) {
+            if (once && hasAnimated) { // If 'once' is true and has already animated, unobserve
               observer.unobserve(entry.target);
             }
           } else if (!once) {
@@ -55,7 +55,7 @@ export function AnimatedSection({
         observer.unobserve(currentRef);
       }
     };
-  }, [threshold, once]);
+  }, [threshold, once, hasAnimated]); // Added hasAnimated to dependencies for re-evaluation if 'once' logic needs it
 
   useEffect(() => {
     if (isIntersecting && !hasAnimated) {
@@ -110,3 +110,4 @@ export function AnimatedSection({
     </div>
   );
 }
+
