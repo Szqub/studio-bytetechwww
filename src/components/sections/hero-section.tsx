@@ -58,14 +58,22 @@ export function HeroSection() {
               {`
                 .line-path {
                   stroke-dasharray: 1000;
-                  animation: drawLine 7s linear infinite;
+                  animation: drawLine 7s ease-in-out infinite;
                 }
                 @keyframes drawLine {
-                  from {
+                  0% {
                     stroke-dashoffset: 1000;
+                    opacity: 0;
                   }
-                  to {
+                  10% {
+                    opacity: 1;
+                  }
+                  90% {
+                    opacity: 1;
+                  }
+                  100% {
                     stroke-dashoffset: 0;
+                    opacity: 0;
                   }
                 }
               `}

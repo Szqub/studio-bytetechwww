@@ -15,12 +15,13 @@ const DEFAULT_LOGO_HEIGHT = 40;
 export function Logo({ className, width = DEFAULT_LOGO_WIDTH, height = DEFAULT_LOGO_HEIGHT }: LogoProps) {
   return (
     <Image
-      src="/logo.png" // Assumes Logo.png is placed in the public directory
+      src="https://picsum.photos/150/40" 
       alt="ByteTech Logo"
       width={width}
       height={height}
-      className={cn(className)} // Allows passing Tailwind classes for opacity, margins etc.
-      priority // Optimizes LCP for logos in headers
+      className={cn(className)} 
+      priority 
+      data-ai-hint="tech logo"
     />
   );
 }
