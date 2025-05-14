@@ -16,7 +16,7 @@ const DEFAULT_LOGO_WIDTH = Math.round(DEFAULT_LOGO_HEIGHT * (1182 / 244)); // ap
 export function Logo({ className, width = DEFAULT_LOGO_WIDTH, height = DEFAULT_LOGO_HEIGHT }: LogoProps) {
   return (
     <Image
-      src="/images/logo.png" // IMPORTANT: User must place their logo file (e.g., 9a7f79e4-ad1f-4edb-bc8a-dcbe15130ea9.png) as logo.png in the public/images/ directory.
+      src="/assets/logo.png" // IMPORTANT: User must place their logo file (e.g., 9a7f79e4-ad1f-4edb-bc8a-dcbe15130ea9.png) as logo.png in the public/assets/ directory.
       alt="ByteTech Logo"
       width={width}
       height={height}
@@ -26,4 +26,3 @@ export function Logo({ className, width = DEFAULT_LOGO_WIDTH, height = DEFAULT_L
     />
   );
 }
-
