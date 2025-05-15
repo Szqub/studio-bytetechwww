@@ -77,7 +77,7 @@ export function ContactSection() {
             Masz pytanie? <span className="gradient-text from-primary to-secondary bg-gradient-to-r">Potrzebujesz wyceny?</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Wypełnij formularz lub napisz bezpośrednio na <a href="mailto:kontakt@bytetech.com.pl" className="text-primary hover:underline">kontakt@bytetech.com.pl</a>. Odpowiemy najszybciej jak to możliwe.
+            Wypełnij formularz lub napisz bezpośrednio na <a href="mailto:biuro@bytetech.com.pl" className="text-primary hover:underline">biuro@bytetech.com.pl</a>. Odpowiemy najszybciej jak to możliwe.
           </p>
         </AnimatedSection>
 
