@@ -15,14 +15,14 @@ export function HeroSection() {
       </div>
       
       <div className="container mx-auto text-center relative z-10">
-        <AnimatedSection animationType="fadeInUp" className="mb-8">
+        <AnimatedSection animationType="fadeInUp">
           <Logo
             width={1182}
             height={244}
             className="h-auto w-full max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto"
           />
         </AnimatedSection>
-        <AnimatedSection animationType="fadeInUp" delay={100}>
+        <AnimatedSection animationType="fadeInUp" delay={100} className="mt-12">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
             <span className="gradient-text from-secondary to-primary bg-gradient-to-r">
               Szybka i bezpieczna sieć.
