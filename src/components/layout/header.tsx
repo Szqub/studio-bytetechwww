@@ -52,7 +52,7 @@ export function Header() {
             <Link
               key={item.label}
               href={item.href}
-              className="text-foreground hover:text-primary transition-colors text-sm font-medium"
+              className="text-foreground hover:text-primary transition-colors text-base font-medium"
               onClick={handleLinkClick}
             >
               {item.label}

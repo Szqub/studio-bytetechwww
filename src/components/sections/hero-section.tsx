@@ -19,7 +19,7 @@ export function HeroSection() {
           <Logo 
             width={1182} 
             height={244} 
-            className="h-auto w-full max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto mb-5 filter drop-shadow-[0_1px_2px_hsl(var(--foreground)/0.25)]" 
+            className="h-auto w-full max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto mb-8 filter drop-shadow-[0_2px_4px_hsl(var(--foreground)/0.3)]" 
           />
         </AnimatedSection>
         <AnimatedSection animationType="fadeInUp" delay={100}>
@@ -79,12 +79,12 @@ export function HeroSection() {
                     stroke-dashoffset: 0;
                     opacity: 1;
                   }
-                   90% { 
+                   90% { /* Start fading out */
                     stroke-dashoffset: 0;
                     opacity: 1;
                   }
                   100% {
-                    stroke-dashoffset: 0; 
+                    stroke-dashoffset: 0; /* Keep at end for fade out */
                     opacity: 0;
                   }
                 }
