@@ -15,11 +15,11 @@ export function HeroSection() {
       </div>
 
       <div className="container mx-auto text-center relative z-10">
-        <AnimatedSection animationType="fadeInUp" className="mb-8">
+        <AnimatedSection animationType="fadeInUp">
           <Logo
             width={1182}
             height={244}
-            className="h-auto w-full max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto drop-shadow-[0_0_10px_hsl(var(--foreground)/0.4)]"
+            className="h-auto w-full max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto drop-shadow-[0_0_8px_hsl(var(--background)/0.7)]"
           />
         </AnimatedSection>
 
@@ -57,3 +57,4 @@ export function HeroSection() {
     </section>
   );
 }
+
