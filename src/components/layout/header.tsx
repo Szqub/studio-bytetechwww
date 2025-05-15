@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils';
 const navItems = [
   { label: 'Oferta', href: '#services' },
   { label: 'O nas', href: '#about' },
-  { label: 'Kontakt', href: '#contact' },
+  { label: 'Kontakt', href: 'mailto:biuro@bytetech.com.pl' },
 ];
 
 export function Header() {
@@ -63,7 +63,7 @@ export function Header() {
         {/* Right Aligned Items: "Skontaktuj się" Button (Desktop) + Mobile Menu Toggle */}
         <div className="flex flex-1 items-center justify-end">
           <Button asChild variant="outline" size="sm" className="hidden md:inline-flex border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-             <Link href="#contact" onClick={handleLinkClick}>Skontaktuj się</Link>
+             <Link href="mailto:biuro@bytetech.com.pl" onClick={handleLinkClick}>Skontaktuj się</Link>
           </Button>
           <div className="md:hidden"> {/* Mobile menu button container */}
             <Button variant="ghost" size="icon" onClick={toggleMobileMenu} aria-label="Otwórz menu">
@@ -88,7 +88,7 @@ export function Header() {
               </Link>
             ))}
             <Button asChild variant="default" size="lg" className="w-4/5" >
-               <Link href="#contact" onClick={handleLinkClick}>Skontaktuj się</Link>
+               <Link href="mailto:biuro@bytetech.com.pl" onClick={handleLinkClick}>Skontaktuj się</Link>
             </Button>
           </nav>
         </div>

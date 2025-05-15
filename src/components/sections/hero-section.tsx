@@ -45,7 +45,7 @@ export function HeroSection() {
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="group border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-secondary/50">
-              <Link href="#contact">
+              <Link href="mailto:biuro@bytetech.com.pl">
                 Skontaktuj się
                 <Send className="ml-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
               </Link>
@@ -57,4 +57,3 @@ export function HeroSection() {
     </section>
   );
 }
-
