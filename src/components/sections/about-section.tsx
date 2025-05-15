@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import { AnimatedSection } from '@/components/ui/animated-section';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card } from '@/components/ui/card';
 import { CheckCircle } from 'lucide-react';
 
 export function AboutSection() {
@@ -36,33 +36,47 @@ export function AboutSection() {
 
           <AnimatedSection animationType="slideInRight" delay={200} className="md:col-span-3">
             <p className="text-muted-foreground mb-4 leading-relaxed">
-              ByteTech to firma specjalizująca się w projektowaniu, wdrażaniu i zabezpieczaniu nowoczesnych sieci informatycznych. Naszym celem jest dostarczanie niezawodnych, bezpiecznych i skalowalnych rozwiązań sieciowych dopasowanych do potrzeb firm, instytucji oraz jednostek samorządu terytorialnego.
+              ByteTech to niezależna firma inżynierska świadcząca usługi z zakresu projektowania, wdrażania i zabezpieczania nowoczesnych sieci komputerowych. Naszą misją jest dostarczanie niezawodnych, bezpiecznych i skalowalnych rozwiązań – bez względu na wielkość organizacji czy poziom zaawansowania klienta.
+            </p>
+            <p className="text-muted-foreground mb-4 leading-relaxed">
+              Za firmą stoi Szymon Żołnierczyk – doświadczony inżynier sieciowy, który od lat realizuje zaawansowane projekty infrastrukturalne dla klientów z różnych sektorów: od międzynarodowych korporacji i instytucji finansowych, przez administrację publiczną i samorządową, aż po małe firmy oraz klientów indywidualnych.
             </p>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Za firmą stoi Szymon Żołnierczyk – inżynier sieciowy z wieloletnim doświadczeniem w realizacji projektów infrastrukturalnych na poziomie korporacyjnym i publicznym. Dzięki praktycznej wiedzy, precyzji działania oraz indywidualnemu podejściu do każdego klienta, ByteTech zyskał zaufanie partnerów w wielu sektorach.
+              Dzięki temu doświadczeniu możemy z równą skutecznością wdrożyć złożoną infrastrukturę VPN dla globalnej organizacji, jak i pomóc klientowi indywidualnemu skonfigurować domową sieć Wi-Fi, komputer, serwer NAS czy zabezpieczenia rodzicielskie.
             </p>
             
-            <h3 className="text-xl font-semibold mb-4 text-foreground mt-8">Dlaczego ByteTech?</h3>
+            <h3 className="text-xl font-semibold mb-4 text-foreground mt-8">Nasze atuty:</h3>
             <ul className="space-y-3 text-muted-foreground mb-6">
               <li className="flex items-start">
                 <CheckCircle className="h-5 w-5 text-primary mr-3 shrink-0 mt-1" />
-                Doświadczenie poparte realnymi wdrożeniami w sektorze prywatnym i publicznym.
+                Bogate doświadczenie projektowe w środowiskach o wysokich wymaganiach (bankowość, duże korporacje, jednostki samorządu terytorialnego)
               </li>
               <li className="flex items-start">
                 <CheckCircle className="h-5 w-5 text-primary mr-3 shrink-0 mt-1" />
-                Skoncentrowanie na jakości, bezpieczeństwie i efektywności rozwiązań.
+                Kompleksowe podejście – od audytu i projektu po wdrożenie i utrzymanie
               </li>
               <li className="flex items-start">
                 <CheckCircle className="h-5 w-5 text-primary mr-3 shrink-0 mt-1" />
-                Partnerskie podejście i transparentna komunikacja.
+                Nowoczesne technologie sieciowe – routing, switching, firewalle, VPN, segmentacja, Wi-Fi, redundancja
               </li>
               <li className="flex items-start">
                 <CheckCircle className="h-5 w-5 text-primary mr-3 shrink-0 mt-1" />
-                Specjalizacja w technologiach nowej generacji – od klasycznych sieci LAN/WAN po nowoczesne systemy VPN, firewall, Wi-Fi, HA i segmentację sieci.
+                Wsparcie dla każdego klienta – od małej firmy po użytkownika domowego
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-primary mr-3 shrink-0 mt-1" />
+                Bezpośrednia współpraca – bez zbędnej biurokracji i handlowców
+              </li>
+              <li className="flex items-start">
+                <CheckCircle className="h-5 w-5 text-primary mr-3 shrink-0 mt-1" />
+                Pełna transparentność i jakość usług na każdym etapie współpracy
               </li>
             </ul>
+            <p className="text-muted-foreground mb-6 leading-relaxed">
+              Bez względu na to, czy potrzebujesz specjalistycznego wsparcia w dużym projekcie IT, czy po prostu chcesz, aby Twój domowy internet działał jak należy – ByteTech to właściwy wybór.
+            </p>
             <p className="text-foreground font-semibold leading-relaxed">
-              Zaprojektujemy i wdrożymy infrastrukturę, która działa. Po prostu.
+              Sieci, które działają. Bez kompromisów.
             </p>
           </AnimatedSection>
         </div>
