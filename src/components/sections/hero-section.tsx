@@ -22,7 +22,8 @@ export function HeroSection() {
             className="h-auto w-full max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto"
           />
         </AnimatedSection>
-        <AnimatedSection animationType="fadeInUp" delay={100} className="mt-12">
+        
+        <AnimatedSection animationType="fadeInUp" delay={100} className="mt-80"> {/* Increased margin-top significantly */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
             <span className="gradient-text from-secondary to-primary bg-gradient-to-r">
               Szybka i bezpieczna sieć.
