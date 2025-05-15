@@ -71,9 +71,9 @@ body::before {
     repeating-linear-gradient(
       60deg,
       hsl(var(--primary) / 0.08),
-      hsl(var(--primary) / 0.08) 0.5px, /* Very thin lines */
+      hsl(var(--primary) / 0.08) 0.5px,
       transparent 0.5px,
-      transparent 40px /* Wider spacing */
+      transparent 40px
     ),
     /* Layer 2: Slower, slightly thicker secondary lines */
     repeating-linear-gradient(
@@ -86,8 +86,8 @@ body::before {
     /* Layer 3: Subtle shimmering noise or very faint diagonal hatch */
     repeating-linear-gradient(
       45deg,
-      hsla(var(--foreground), 0.02), /* Use foreground with very low alpha for subtlety */
-      hsla(var(--foreground), 0.02) 0.5px,
+      hsl(var(--foreground) / 0.02), /* Corrected syntax here */
+      hsl(var(--foreground) / 0.02) 0.5px, /* And here */
       transparent 0.5px,
       transparent 10px
     );
