@@ -76,9 +76,9 @@ body {
   z-index: -100; /* Ensures video is behind all content */
   object-fit: cover; /* Covers the entire area, cropping if necessary */
   opacity: 0.35; /* Make video 35% transparent */
-  /* Optional: Add a dark overlay if video is too bright for text contrast */
-  /* filter: brightness(0.7); */
+  filter: brightness(0.6); /* Darken the video to improve text/logo contrast */
 }
 
 /* Ensure content wrapper has a higher z-index or is positioned correctly */
 /* The .relative and z-10 on the wrapper in layout.tsx should handle this */
+
