@@ -16,12 +16,10 @@ export function HeroSection() {
       
       <div className="container mx-auto text-center relative z-10">
         <AnimatedSection animationType="fadeInUp">
-          {/* Logo displayed centrally. Target height ~160px achieved by max-w-3xl (768px width) given 1182x244 aspect ratio. */}
-          {/* Margin bottom set to 20px (mb-5). */}
           <Logo 
             width={1182} 
             height={244} 
-            className="h-auto w-full max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto mb-5" 
+            className="h-auto w-full max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto mb-5 filter drop-shadow-[0_1px_2px_hsl(var(--foreground)/0.25)]" 
           />
         </AnimatedSection>
         <AnimatedSection animationType="fadeInUp" delay={100}>
@@ -29,16 +27,15 @@ export function HeroSection() {
             <span className="gradient-text from-secondary to-primary bg-gradient-to-r">
               Szybka i bezpieczna sieć.
             </span>
-            {/* Removed "Zaprojektowana, żeby działała." */}
           </h1>
         </AnimatedSection>
-        <AnimatedSection animationType="fadeInUp" delay={300}> {/* Adjusted delay */}
+        <AnimatedSection animationType="fadeInUp" delay={300}>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10">
             ByteTech to niezależna firma inżynierska zajmującą się projektowaniem,
             konfiguracją i zabezpieczaniem nowoczesnych sieci informatycznych.
           </p>
         </AnimatedSection>
-        <AnimatedSection animationType="fadeInUp" delay={500}> {/* Adjusted delay */}
+        <AnimatedSection animationType="fadeInUp" delay={500}>
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
             <Button asChild size="lg" className="group bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-primary/50">
               <Link href="#services">
@@ -82,12 +79,12 @@ export function HeroSection() {
                     stroke-dashoffset: 0;
                     opacity: 1;
                   }
-                  90% { /* Start fading out */
+                   90% { 
                     stroke-dashoffset: 0;
                     opacity: 1;
                   }
                   100% {
-                    stroke-dashoffset: 0; /* Keep at end for fade out */
+                    stroke-dashoffset: 0; 
                     opacity: 0;
                   }
                 }

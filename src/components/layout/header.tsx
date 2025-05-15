@@ -3,7 +3,6 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-// Logo import removed as it's no longer used in the header
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -41,9 +40,13 @@ export function Header() {
         isScrolled ? 'bg-background/80 backdrop-blur-md shadow-lg' : 'bg-transparent',
       )}
     >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-end h-20"> {/* Changed to justify-end */}
-        {/* Logo removed from header. It's now prominently in HeroSection. */}
-        
+      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between h-20">
+        {/* Left Spacer for centering nav */}
+        <div className="hidden md:flex flex-1">
+          {/* Intentionally blank or for future use */}
+        </div>
+
+        {/* Centered Navigation Links (Desktop) */}
         <nav className="hidden md:flex space-x-6 items-center">
           {navItems.map((item) => (
             <Link
@@ -55,15 +58,18 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-           <Button asChild variant="outline" size="sm" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-             <Link href="#contact" onClick={handleLinkClick}>Skontaktuj się</Link>
-           </Button>
         </nav>
 
-        <div className="md:hidden"> {/* This will be pushed to the far right by justify-end on parent */}
-          <Button variant="ghost" size="icon" onClick={toggleMobileMenu} aria-label="Otwórz menu">
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        {/* Right Aligned Items: "Skontaktuj się" Button (Desktop) + Mobile Menu Toggle */}
+        <div className="flex flex-1 items-center justify-end">
+          <Button asChild variant="outline" size="sm" className="hidden md:inline-flex border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+             <Link href="#contact" onClick={handleLinkClick}>Skontaktuj się</Link>
           </Button>
+          <div className="md:hidden"> {/* Mobile menu button container */}
+            <Button variant="ghost" size="icon" onClick={toggleMobileMenu} aria-label="Otwórz menu">
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
+          </div>
         </div>
       </div>
 
@@ -90,4 +96,3 @@ export function Header() {
     </header>
   );
 }
-
