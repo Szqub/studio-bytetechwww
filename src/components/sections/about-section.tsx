@@ -17,9 +17,15 @@ export function AboutSection() {
         <div className="grid md:grid-cols-5 gap-8 md:gap-12 items-center">
           <AnimatedSection animationType="slideInLeft" delay={100} className="md:col-span-2">
              <Card className="overflow-hidden shadow-2xl border-primary/30">
+                {/* 
+                  Zdjęcie prezesa. Jeśli chcesz je zmienić:
+                  1. Umieść nowy plik graficzny w folderze `public/assets/` (np. `public/assets/nowe-zdjecie-prezesa.jpg`).
+                  2. Zmień poniższy atrybut `src` na ścieżkę do Twojego nowego pliku, np. `src="/assets/nowe-zdjecie-prezesa.jpg"`.
+                  3. Upewnij się, że wymiary (width i height) oraz alt tekst są odpowiednie dla Twojej grafiki.
+                */}
                 <Image
-                  src="https://picsum.photos/seed/bytetech-founder/600/700"
-                  alt="Szymon Żołnierczyk - Założyciel ByteTech"
+                  src="/assets/prezes.jpg" 
+                  alt="Prezes ByteTech - Szymon Żołnierczyk"
                   width={600}
                   height={700}
                   className="object-cover w-full h-auto aspect-[3/4] transition-transform duration-500 hover:scale-105"
@@ -57,3 +63,4 @@ export function AboutSection() {
     </section>
   );
 }
+
