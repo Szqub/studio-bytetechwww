@@ -19,7 +19,7 @@ export function HeroSection() {
           <Logo
             width={1182}
             height={244}
-            className="h-auto w-full max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto"
+            className="h-auto w-full max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto drop-shadow-[0_1px_2px_hsl(var(--foreground)/0.3)]"
           />
         </AnimatedSection>
 
@@ -54,7 +54,6 @@ export function HeroSection() {
         </AnimatedSection>
       </div>
       
-      {/* Removed SVG line animation */}
     </section>
   );
 }
