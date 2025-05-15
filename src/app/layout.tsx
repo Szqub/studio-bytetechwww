@@ -1,14 +1,12 @@
 
 import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
-// import { GeistMono } from 'geist/font/mono'; Removed as it's not used and causes a build error
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 
 const geistSans = GeistSans;
-// const geistMono = GeistMono; // Removed as it's not used
 
 export const metadata: Metadata = {
   title: 'ByteTech - Szybka i bezpieczna sieć',
@@ -22,11 +20,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl">
-      <body className={`${geistSans.variable} antialiased`}> {/* Removed geistMono.variable */}
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <Toaster />
+      <body className={`${geistSans.variable} antialiased`}>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline // Important for iOS
+          className="video-background"
+          src="/assets/background.mp4" // Make sure background.mp4 is in public/assets/
+          typeof="video/mp4"
+        />
+        <div className="relative z-10"> {/* Wrapper to ensure content is above video */}
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <Toaster />
+        </div>
       </body>
     </html>
   );

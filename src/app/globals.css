@@ -64,3 +64,20 @@ body {
 .gradient-text {
   @apply bg-clip-text text-transparent;
 }
+
+.video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100; /* Ensures video is behind all content */
+  object-fit: cover; /* Covers the entire area, cropping if necessary */
+  /* Optional: Add a dark overlay if video is too bright for text contrast */
+  /* filter: brightness(0.7); */
+}
+
+/* Ensure content wrapper has a higher z-index or is positioned correctly */
+/* The .relative and z-10 on the wrapper in layout.tsx should handle this */
