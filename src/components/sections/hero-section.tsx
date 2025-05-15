@@ -19,7 +19,7 @@ export function HeroSection() {
           <Logo 
             width={1182} 
             height={244} 
-            className="h-auto w-full max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto mb-8 filter drop-shadow-[0_2px_4px_hsl(var(--foreground)/0.3)]" 
+            className="h-auto w-full max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto mb-4" 
           />
         </AnimatedSection>
         <AnimatedSection animationType="fadeInUp" delay={100}>
@@ -110,3 +110,5 @@ export function HeroSection() {
     </section>
   );
 }
+
+    
