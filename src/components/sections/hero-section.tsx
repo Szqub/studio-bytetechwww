@@ -19,7 +19,7 @@ export function HeroSection() {
           <Logo
             width={1182}
             height={244}
-            className="h-auto w-full max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto drop-shadow-[0_1px_2px_hsl(var(--foreground)/0.3)]"
+            className="h-auto w-full max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto drop-shadow-[0_0_10px_hsl(var(--foreground)/0.4)]"
           />
         </AnimatedSection>
 
