@@ -8,9 +8,9 @@ import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navItems = [
-  { label: 'Oferta', href: '#services' },
-  { label: 'O nas', href: '#about' },
-  { label: 'Kontakt', href: 'mailto:biuro@bytetech.com.pl' },
+  { label: 'Oferta', href: '/#services' }, // Updated to link to homepage section
+  { label: 'O nas', href: '/#about' },   // Updated to link to homepage section
+  { label: 'Kontakt', href: '/kontakt' }, // Updated to link to new /kontakt page
 ];
 
 export function Header() {
@@ -27,10 +27,16 @@ export function Header() {
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (href: string) => {
     if (isMobileMenuOpen) {
       setIsMobileMenuOpen(false);
     }
+    // For mailto links, let the default browser action occur
+    if (href.startsWith('mailto:')) {
+        return;
+    }
+    // For internal links or hash links on the same page, handle normally
+    // Router push will handle navigation
   };
 
   return (
@@ -53,7 +59,7 @@ export function Header() {
               key={item.label}
               href={item.href}
               className="text-foreground hover:text-primary transition-colors text-base font-medium"
-              onClick={handleLinkClick}
+              onClick={() => handleLinkClick(item.href)}
             >
               {item.label}
             </Link>
@@ -63,7 +69,7 @@ export function Header() {
         {/* Right Aligned Items: "Skontaktuj się" Button (Desktop) + Mobile Menu Toggle */}
         <div className="flex flex-1 items-center justify-end">
           <Button asChild variant="outline" size="sm" className="hidden md:inline-flex border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-             <Link href="mailto:biuro@bytetech.com.pl" onClick={handleLinkClick}>Skontaktuj się</Link>
+             <Link href="mailto:biuro@bytetech.com.pl" onClick={() => handleLinkClick('mailto:biuro@bytetech.com.pl')}>Skontaktuj się</Link>
           </Button>
           <div className="md:hidden"> {/* Mobile menu button container */}
             <Button variant="ghost" size="icon" onClick={toggleMobileMenu} aria-label="Otwórz menu">
@@ -82,13 +88,13 @@ export function Header() {
                 key={item.label}
                 href={item.href}
                 className="text-foreground hover:text-primary transition-colors text-lg"
-                onClick={handleLinkClick}
+                onClick={() => handleLinkClick(item.href)}
               >
                 {item.label}
               </Link>
             ))}
             <Button asChild variant="default" size="lg" className="w-4/5" >
-               <Link href="mailto:biuro@bytetech.com.pl" onClick={handleLinkClick}>Skontaktuj się</Link>
+               <Link href="mailto:biuro@bytetech.com.pl" onClick={() => handleLinkClick('mailto:biuro@bytetech.com.pl')}>Skontaktuj się</Link>
             </Button>
           </nav>
         </div>

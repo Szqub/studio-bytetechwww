@@ -43,6 +43,10 @@ body {
     --chart-3: 220 50% 40%; /* Stonowany ciemnoniebieski */
     --chart-4: 210 70% 75%; /* Jasny, miękki niebieski */
     --chart-5: 195 90% 50%; /* Cyjanowy niebieski */
+
+    /* Variables for calculating min-height on contact page */
+    --header-height: 5rem; /* 80px, adjust if header height changes */
+    --footer-height: 10rem; /* Approximate footer height, adjust as needed */
   }
 }
 
@@ -78,7 +82,3 @@ body {
   opacity: 0.35; /* Make video 35% transparent */
   filter: brightness(0.6); /* Darken the video to improve text/logo contrast */
 }
-
-/* Ensure content wrapper has a higher z-index or is positioned correctly */
-/* The .relative and z-10 on the wrapper in layout.tsx should handle this */
-

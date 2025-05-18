@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { AnimatedSection } from '@/components/ui/animated-section';
-import { ChevronRight, Send } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { Logo } from '@/components/ui/logo';
 
 export function HeroSection() {
@@ -39,17 +39,12 @@ export function HeroSection() {
         <AnimatedSection animationType="fadeInUp" delay={500}>
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
             <Button asChild size="lg" className="group bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-primary/50">
-              <Link href="#services">
+              <Link href="/#services"> {/* Updated to link to homepage section */}
                 Poznaj ofertę
                 <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="group border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-secondary/50">
-              <Link href="mailto:biuro@bytetech.com.pl">
-                Skontaktuj się
-                <Send className="ml-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
-              </Link>
-            </Button>
+            {/* "Skontaktuj się" button previously here is now removed */}
           </div>
         </AnimatedSection>
       </div>
