@@ -9,7 +9,7 @@ import { Footer } from '@/components/layout/footer';
 const geistSans = GeistSans;
 
 export const metadata: Metadata = {
-  title: 'ByteTech - Szybka i bezpieczna sieć',
+  title: 'ByteTech - Szymon Żołnierczyk',
   description: 'ByteTech - Niezależna firma inżynierska specjalizująca się w projektowaniu, konfiguracji i zabezpieczaniu nowoczesnych sieci informatycznych.',
 };
 
